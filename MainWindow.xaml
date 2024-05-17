@@ -1,0 +1,30 @@
+﻿<Window x:Class="StickyFinger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StickyFinger"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    AllowsTransparency="True"
+        Background="{x:Null}" MouseDown="Window_MouseDown">
+    <Grid>
+        <Rectangle Width="200" Height="200">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="rotateTransform" CenterX="100" CenterY="100"/>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <StaticResource ResourceKey="pointingBrush"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="X" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"
+                MouseEnter="CloseButton_MouseEnter"/>
+    </Grid>
+</Window>
+
+<!--Image Taken from
+<a href="https://www.flaticon.com/free-icons/hands-and-gestures" title="hands and gestures icons">Hands and gestures icons created by Ashwin Vgl - Flaticon</a>
+    https://www.flaticon.com/free-icon/pointing_6038937
+    -->
