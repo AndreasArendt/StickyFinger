@@ -40,6 +40,7 @@ namespace StickyFinger
             if (!e.Editable) 
             {
                 this.Topmost = true;
+                rotateTransform.BeginAnimation(RotateTransform.AngleProperty, this.mMainViewModel.Rotate(0)); // definetly stop animation
             }
         }
 
