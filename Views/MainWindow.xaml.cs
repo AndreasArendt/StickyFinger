@@ -25,20 +25,35 @@ namespace StickyFinger
     public partial class MainWindow : Window
     {
         private MainViewModel mMainViewModel;
-   
+
         public MainWindow()
         {
             InitializeComponent();
-            
+
             this.mMainViewModel = new MainViewModel();
+            this.mMainViewModel.OnEditableChange += MainViewModel_OnEditableChange;
             DataContext = this.mMainViewModel;
+        }
+
+        private void MainViewModel_OnEditableChange(object sender, EditableEventArgs e)
+        {
+            if (!e.Editable) 
+            {
+                this.Topmost = true;
+            }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left) this.DragMove();
+            if (this.mMainViewModel.Editable)
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    this.DragMove();
+                }
+            }
         }
-        
+
         private void ControlPanel_OnClose(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -51,7 +66,7 @@ namespace StickyFinger
 
         private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            if(this.mMainViewModel.Editable)
+            if (this.mMainViewModel.Editable)
             {
                 // delta seems to be always ~120 - increment in 5deg steps            
                 var animation = this.mMainViewModel.Rotate(e.Delta / 120 * 5);

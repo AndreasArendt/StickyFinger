@@ -10,13 +10,27 @@ using System.Windows;
 
 namespace StickyFinger.ViewModels
 {
+    public class EditableEventArgs
+    {
+        public EditableEventArgs(bool editable) { Editable = editable; }
+        public bool Editable { get; } // readonly
+    }
+
     internal class MainViewModel : ViewModelBase
     {
+        
+        public delegate void EditableEventHandler(object sender, EditableEventArgs e);                
+        public event EditableEventHandler OnEditableChange;
+
         private bool mEditable;
         public bool Editable
         {
             get { return this.mEditable; }
-            set { this.SetProperty(ref this.mEditable, value); }
+            set 
+            { 
+                this.SetProperty(ref this.mEditable, value);
+                OnEditableChange?.Invoke(this, new EditableEventArgs(this.mEditable));
+            }
         }
 
         private int mRotation;
