@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,7 @@ namespace StickyFinger
         public MainWindow()
         {
             InitializeComponent();
-            StartRotationAnimation();
-
+            
             this.mMainViewModel = new MainViewModel();
             DataContext = this.mMainViewModel;
         }
@@ -38,19 +38,7 @@ namespace StickyFinger
         {
             if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
-
-        private void StartRotationAnimation()
-        {
-            DoubleAnimation animation = new DoubleAnimation
-            {
-                From = 0,
-                To = 360,
-                Duration = new Duration(TimeSpan.FromSeconds(5)),
-                RepeatBehavior = RepeatBehavior.Forever
-            };
-            rotateTransform.BeginAnimation(RotateTransform.AngleProperty, animation);
-        }
-
+        
         private void ControlPanel_OnClose(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -59,6 +47,16 @@ namespace StickyFinger
         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             this.mMainViewModel.Editable ^= true;
+        }
+
+        private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if(this.mMainViewModel.Editable)
+            {
+                // delta seems to be always ~120 - increment in 5deg steps            
+                var animation = this.mMainViewModel.Rotate(e.Delta / 120 * 5);
+                rotateTransform.BeginAnimation(RotateTransform.AngleProperty, animation);
+            }
         }
     }
 }

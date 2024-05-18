@@ -13,6 +13,7 @@
         Background="{x:Null}" 
         MouseDown="Window_MouseDown"
         MouseDoubleClick="Window_MouseDoubleClick"
+        MouseWheel="Window_MouseWheel"
         xmlns:ui="clr-namespace:StickyFinger.UiControls">
 
     <Window.Resources>
