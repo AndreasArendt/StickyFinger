@@ -4,25 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StickyFinger"
+        xmlns:converter="clr-namespace:StickyFinger.Converter"
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="300"
         ResizeMode="NoResize"
         WindowStyle="None"
         AllowsTransparency="True"
-        Background="{x:Null}" MouseDown="Window_MouseDown"
-        xmlns:app="clr-namespace:StickyFinger">
+        Background="{x:Null}" 
+        MouseDown="Window_MouseDown"
+        MouseDoubleClick="Window_MouseDoubleClick"
+        xmlns:ui="clr-namespace:StickyFinger.UiControls">
+
+    <Window.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>
+    </Window.Resources>
+
     <Grid>
-        <Grid.RowDefinitions>            
+        <Grid.RowDefinitions>
             <RowDefinition Height="200" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="50" />            
+            <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
-        
-        <Rectangle  Grid.Row="0" Grid.Column="0">
+
+        <Rectangle Grid.Row="0" Grid.Column="0">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="rotateTransform" CenterX="100" CenterY="100"/>
             </Rectangle.RenderTransform>
@@ -30,10 +38,11 @@
                 <StaticResource ResourceKey="pointingBrush"/>
             </Rectangle.Fill>
         </Rectangle>
-            
+
         <!-- Control Panel -->
 
-        <app:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose"/>
+        <ui:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose"/>  <!--Visibility="Visible"/>-->
+        <!--Visibility="{Binding Fixed, Converter={StaticResource BoolToVisConverter}}"/>-->
     </Grid>
 </Window>
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StickyFinger
+namespace StickyFinger.UiControls
 {
     /// <summary>
     /// Interaktionslogik für ControlPanel.xaml

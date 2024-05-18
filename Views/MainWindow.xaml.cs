@@ -1,5 +1,7 @@
-﻿using System;
+﻿using StickyFinger.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +23,15 @@ namespace StickyFinger
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel mMainViewModel;
+   
         public MainWindow()
         {
             InitializeComponent();
             StartRotationAnimation();
+
+            this.mMainViewModel = new MainViewModel();
+            DataContext = this.mMainViewModel;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -47,6 +54,11 @@ namespace StickyFinger
         private void ControlPanel_OnClose(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.mMainViewModel.Fixed ^= true;
         }
     }
 }
