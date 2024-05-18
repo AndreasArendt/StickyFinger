@@ -58,7 +58,7 @@ namespace StickyFinger
 
         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            this.mMainViewModel.Fixed ^= true;
+            this.mMainViewModel.Editable ^= true;
         }
     }
 }

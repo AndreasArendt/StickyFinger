@@ -41,8 +41,8 @@
 
         <!-- Control Panel -->
 
-        <ui:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose"/>  <!--Visibility="Visible"/>-->
-        <!--Visibility="{Binding Fixed, Converter={StaticResource BoolToVisConverter}}"/>-->
+        <ui:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose" 
+                         Visibility="{Binding Editable, Converter={StaticResource BoolToVisConverter}}"/>
     </Grid>
 </Window>
 

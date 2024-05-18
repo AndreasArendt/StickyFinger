@@ -9,22 +9,22 @@ namespace StickyFinger.ViewModels
 {
     internal class MainViewModel : ViewModelBase
     {
-        private bool mFixed;
-        public bool Fixed
+        private bool mEditable;
+        public bool Editable
         {
             get
             {
-                return this.mFixed;
+                return this.mEditable;
             }
             set
             {
-                SetProperty(ref this.mFixed, value);
+                SetProperty(ref this.mEditable, value);
             }
         }
 
         public MainViewModel()
         {
-            this.Fixed = false;
+            this.Editable = true;
         }
     }
 }
