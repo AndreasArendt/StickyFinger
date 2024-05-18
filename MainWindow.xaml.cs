@@ -44,7 +44,7 @@ namespace StickyFinger
             rotateTransform.BeginAnimation(RotateTransform.AngleProperty, animation);
         }
 
-        private void CloseButton_MouseEnter(object sender, MouseEventArgs e)
+        private void ControlPanel_OnClose(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

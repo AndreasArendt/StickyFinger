@@ -5,13 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StickyFinger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-    ResizeMode="NoResize"
-    WindowStyle="None"
-    AllowsTransparency="True"
-        Background="{x:Null}" MouseDown="Window_MouseDown">
+        Title="MainWindow" Height="200" Width="300"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="{x:Null}" MouseDown="Window_MouseDown"
+        xmlns:app="clr-namespace:StickyFinger">
     <Grid>
-        <Rectangle Width="200" Height="200">
+        <Grid.RowDefinitions>            
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="50" />            
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle  Grid.Row="0" Grid.Column="0">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="rotateTransform" CenterX="100" CenterY="100"/>
             </Rectangle.RenderTransform>
@@ -19,8 +30,10 @@
                 <StaticResource ResourceKey="pointingBrush"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="X" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top"
-                MouseEnter="CloseButton_MouseEnter"/>
+            
+        <!-- Control Panel -->
+
+        <app:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose"/>
     </Grid>
 </Window>
 

@@ -5,5 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ImageBrush x:Key="pointingBrush" ImageSource="Resources/pointing.png"/>
+        <ImageBrush x:Key="close-30" ImageSource="Resources/close-30.png"/>
+        <ImageBrush x:Key="close-60" ImageSource="Resources/close-60.png"/>
     </Application.Resources>
 </Application>

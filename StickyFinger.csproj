@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\close-30.png" />
+    <None Remove="Resources\close-60.png" />
     <None Remove="Resources\pointing.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\close-30.png" />
+    <Resource Include="Resources\close-60.png" />
     <Resource Include="Resources\pointing.png" />
   </ItemGroup>
 
