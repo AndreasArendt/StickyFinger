@@ -14,7 +14,8 @@
         MouseDown="Window_MouseDown"
         MouseDoubleClick="Window_MouseDoubleClick"
         MouseWheel="Window_MouseWheel"
-        xmlns:ui="clr-namespace:StickyFinger.UiControls">
+        xmlns:ui="clr-namespace:StickyFinger.UiControls"
+        WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>
