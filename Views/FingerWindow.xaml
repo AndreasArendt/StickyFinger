@@ -30,7 +30,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
 
         <Rectangle Grid.Row="1" Grid.Column="0">

@@ -43,5 +43,15 @@ namespace StickyFinger.UiControls
             var fingerWindow = new FingerWindow();
             fingerWindow.Show();
         }
+
+        private void ButtonLeft_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightRight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

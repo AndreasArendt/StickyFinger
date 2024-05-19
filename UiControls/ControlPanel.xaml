@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StickyFinger.UiControls"
              mc:Ignorable="d" 
-             d:DesignHeight="20" d:DesignWidth="60">
+             d:DesignHeight="20" d:DesignWidth="100">
 
     <UserControl.Resources>
         <SolidColorBrush x:Key="CloseButtonBrush" Color="#AA4A44"/>
         <SolidColorBrush x:Key="AddButtonBrush" Color="#63775b"/>
+        <SolidColorBrush x:Key="SwitchButtonBrush" Color="#6c5d75"/>        
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal">
@@ -38,6 +39,60 @@
 
             <Image Source="/Resources/plus-50.png" />
         </Button>
+        
+        <!--Left Arrow-->
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonLeft_Click" Width="20" Height="20" Margin="1,0,1,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SwitchButtonBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Image Source="/Resources/arrow-50.png"/>
+        </Button>
+
+        <!--Right Arrow-->
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="RightRight_Click" Width="20" Height="20" Margin="1,0,1,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SwitchButtonBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Image Source="/Resources/arrow-50.png" RenderTransformOrigin=".5,.5">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="180" />
+                </Image.RenderTransform>
+            </Image>
+        </Button>
 
         <!--Close Button-->
         <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonClose_Click" Width="20" Height="20" Margin="1,0,1,0">
@@ -63,6 +118,6 @@
 
             <Image Source="/Resources/close-50.png"/>
         </Button>
-  
+
     </StackPanel>
 </UserControl>
