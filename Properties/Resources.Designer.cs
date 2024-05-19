@@ -63,9 +63,9 @@ namespace StickyFinger.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
-        internal static byte[] close_30 {
+        internal static byte[] close_50 {
             get {
-                object obj = ResourceManager.GetObject("close_30", resourceCulture);
+                object obj = ResourceManager.GetObject("close-50", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace StickyFinger.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
-        internal static byte[] close_60 {
+        internal static byte[] ellipsis_50 {
             get {
-                object obj = ResourceManager.GetObject("close_60", resourceCulture);
+                object obj = ResourceManager.GetObject("ellipsis-50", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] plus_50 {
+            get {
+                object obj = ResourceManager.GetObject("plus-50", resourceCulture);
                 return ((byte[])(obj));
             }
         }

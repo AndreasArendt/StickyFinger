@@ -2,10 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:StickyFinger"             
-             StartupUri="Views/MainWindow.xaml">
+             StartupUri="Views/FingerWindow.xaml">
     <Application.Resources>
-        <ImageBrush x:Key="pointingBrush" ImageSource="Resources/pointing.png"/>
-        <ImageBrush x:Key="close-30" ImageSource="Resources/close-30.png"/>
-        <ImageBrush x:Key="close-60" ImageSource="Resources/close-60.png"/>
+        <ImageBrush x:Key="pointingBrush" ImageSource="Resources/pointing.png"/>        
+        <ImageBrush x:Key="plus-50" ImageSource="Resources/plus-50.png"/>
     </Application.Resources>
 </Application>

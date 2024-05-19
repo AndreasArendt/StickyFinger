@@ -5,23 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StickyFinger.UiControls"
              mc:Ignorable="d" 
-             d:DesignHeight="15" d:DesignWidth="45">
+             d:DesignHeight="20" d:DesignWidth="60">
 
     <UserControl.Resources>
         <SolidColorBrush x:Key="CloseButtonBrush" Color="#AA4A44"/>
+        <SolidColorBrush x:Key="AddButtonBrush" Color="#63775b"/>
     </UserControl.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="15" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="15"/>
-        </Grid.ColumnDefinitions>
+    <StackPanel Orientation="Horizontal">
+        
+        <!--Add Button-->
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonAdd_Click" Width="20" Height="20" Margin="1,0,1,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AddButtonBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
 
-        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonClose_Click">
+            <Image Source="/Resources/plus-50.png" />
+        </Button>
+
+        <!--Close Button-->
+        <Button BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonClose_Click" Width="20" Height="20" Margin="1,0,1,0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -42,7 +61,8 @@
                 </Style>
             </Button.Style>
 
-            <Image Source="pack://application:,,,/StickyFinger;component/Resources/close-30.png" />
+            <Image Source="/Resources/close-50.png"/>
         </Button>
-    </Grid>
+  
+    </StackPanel>
 </UserControl>

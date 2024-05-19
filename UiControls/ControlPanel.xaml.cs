@@ -21,7 +21,7 @@ namespace StickyFinger.UiControls
     public partial class ControlPanel : UserControl
     {
         public static readonly RoutedEvent CloseEvent = EventManager.RegisterRoutedEvent("CloseEvent", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ControlPanel));
-        
+
         public ControlPanel()
         {
             InitializeComponent();
@@ -31,13 +31,17 @@ namespace StickyFinger.UiControls
         {
             RaiseEvent(new RoutedEventArgs(ControlPanel.CloseEvent));
         }
-                                
+
         public event RoutedEventHandler OnClose
         {
             add { AddHandler(CloseEvent, value); }
             remove { RemoveHandler(CloseEvent, value); }
         }
-   
 
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var fingerWindow = new FingerWindow();
+            fingerWindow.Show();
+        }
     }
 }
