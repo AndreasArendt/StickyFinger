@@ -15,10 +15,11 @@
         MouseDoubleClick="Window_MouseDoubleClick"
         MouseWheel="Window_MouseWheel"
         xmlns:ui="clr-namespace:StickyFinger.UiControls"
+        
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>        
     </Window.Resources>
 
     <Grid>
@@ -33,18 +34,18 @@
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="1" Grid.Column="0">
+        <Rectangle Grid.Row="1" Grid.Column="0" Width="200" Height="200" Fill="{Binding CurrentFinger}">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="rotateTransform" CenterX="100" CenterY="100"/>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <StaticResource ResourceKey="pointingBrush"/>
-            </Rectangle.Fill>
+            </Rectangle.RenderTransform>            
         </Rectangle>
-
+       
         <!-- Control Panel -->
         
-        <ui:ControlPanel Grid.Row="0" Grid.Column="1" OnClose="ControlPanel_OnClose" 
+        <ui:ControlPanel Grid.Row="0" Grid.Column="1" 
+                         OnClose="ControlPanel_OnClose" 
+                         OnSlideLeft="ControlPanel_OnSlideLeft"
+                         OnSlideRight="ControlPanel_OnSlideRight"
                          Visibility="{Binding Editable, Converter={StaticResource BoolToVisConverter}}"/>
     </Grid>
 </Window>

@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:StickyFinger"             
              StartupUri="Views/FingerWindow.xaml">
     <Application.Resources>
-        <ImageBrush x:Key="pointingBrush" ImageSource="Resources/Fingers/pointing.png"/>
-        <ImageBrush x:Key="cursorBrush" ImageSource="Resources/Fingers/cursor-512.png"/>
+        <ImageBrush x:Key="pointing" ImageSource="Resources/Fingers/pointing.png"/>
+        <ImageBrush x:Key="cursor" ImageSource="Resources/Fingers/cursor-512.png"/>
         <!--<ImageBrush x:Key="plus-50" ImageSource="Resources/plus-50.png"/>-->
     </Application.Resources>
 </Application>

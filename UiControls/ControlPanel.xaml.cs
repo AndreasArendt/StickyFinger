@@ -21,6 +21,8 @@ namespace StickyFinger.UiControls
     public partial class ControlPanel : UserControl
     {
         public static readonly RoutedEvent CloseEvent = EventManager.RegisterRoutedEvent("CloseEvent", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ControlPanel));
+        public static readonly RoutedEvent SlideLeftEvent = EventManager.RegisterRoutedEvent("SlideLeftEvent", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ControlPanel));
+        public static readonly RoutedEvent SlideRightEvent = EventManager.RegisterRoutedEvent("SlideRightEvent", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ControlPanel));
 
         public ControlPanel()
         {
@@ -38,6 +40,17 @@ namespace StickyFinger.UiControls
             remove { RemoveHandler(CloseEvent, value); }
         }
 
+        public event RoutedEventHandler OnSlideLeft
+        {
+            add { AddHandler(SlideLeftEvent, value); }
+            remove { RemoveHandler(SlideLeftEvent, value); }        
+        }
+
+        public event RoutedEventHandler OnSlideRight
+        {
+            add { AddHandler(SlideRightEvent, value); }
+            remove { RemoveHandler(SlideRightEvent, value); }
+        }
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             var fingerWindow = new FingerWindow();
@@ -46,12 +59,12 @@ namespace StickyFinger.UiControls
 
         private void ButtonLeft_Click(object sender, RoutedEventArgs e)
         {
-
+            RaiseEvent(new RoutedEventArgs(ControlPanel.SlideLeftEvent));
         }
 
         private void RightRight_Click(object sender, RoutedEventArgs e)
         {
-
+            RaiseEvent(new RoutedEventArgs(ControlPanel.SlideRightEvent));
         }
     }
 }

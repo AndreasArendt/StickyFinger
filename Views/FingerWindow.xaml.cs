@@ -74,5 +74,15 @@ namespace StickyFinger
                 rotateTransform.BeginAnimation(RotateTransform.AngleProperty, animation);
             }
         }
+
+        private void ControlPanel_OnSlideLeft(object sender, RoutedEventArgs e)
+        {
+            this.mMainViewModel.PreviousPointer();            
+        }
+
+        private void ControlPanel_OnSlideRight(object sender, RoutedEventArgs e)
+        {
+            this.mMainViewModel.NextPointer();            
+        }
     }
 }
