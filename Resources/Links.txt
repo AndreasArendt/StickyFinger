@@ -4,3 +4,8 @@ plus-50: https://icons8.com/icon/37784/plus-math
 close-50: https://icons8.com/icon/9433/multiply
 cursor-512: https://icons8.com/icon/14102/cursor
 arrow-50: https://icons8.com/icon/9438/less-than
+forefinger: https://www.flaticon.com/free-icon/forefinger_6567081
+long-arrow: https://www.flaticon.com/free-icon/long-arrow-pointing-to-the-right_25426
+gesture: https://www.flaticon.com/free-icon/gesture_9161138
+thumb-up: https://www.flaticon.com/free-icon/thumb-up_889140
+ok: https://www.flaticon.com/free-icon/ok_4151557

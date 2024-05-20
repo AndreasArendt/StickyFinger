@@ -60,11 +60,12 @@ namespace StickyFinger.ViewModels
         {
             this.Editable = true;
             this.Rotation = 0;
-            
+
             this.mImages = Application.Current.Resources
                 .OfType<DictionaryEntry>()
                 .Where(entry => entry.Value is ImageBrush)
                 .Select(entry => entry.Value as ImageBrush)
+                .OrderBy(imageBrush => System.IO.Path.GetFileName(((ImageBrush)imageBrush).ImageSource.ToString()))
                 .ToList();
 
             this.CurrentFinger = this.mImages.FirstOrDefault();

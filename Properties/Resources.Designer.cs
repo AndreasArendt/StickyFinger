@@ -63,6 +63,16 @@ namespace StickyFinger.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] aa_pointing {
+            get {
+                object obj = ResourceManager.GetObject("aa_pointing", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] arrow_50 {
             get {
                 object obj = ResourceManager.GetObject("arrow-50", resourceCulture);
@@ -103,6 +113,36 @@ namespace StickyFinger.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] forefinger {
+            get {
+                object obj = ResourceManager.GetObject("forefinger", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] gesture {
+            get {
+                object obj = ResourceManager.GetObject("gesture", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] long_arrow {
+            get {
+                object obj = ResourceManager.GetObject("long-arrow", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] plus_50 {
             get {
                 object obj = ResourceManager.GetObject("plus-50", resourceCulture);
@@ -113,9 +153,19 @@ namespace StickyFinger.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
-        internal static byte[] pointing {
+        internal static byte[] thumb_up {
             get {
-                object obj = ResourceManager.GetObject("pointing", resourceCulture);
+                object obj = ResourceManager.GetObject("thumb-up", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] zz_ok {
+            get {
+                object obj = ResourceManager.GetObject("zz_ok", resourceCulture);
                 return ((byte[])(obj));
             }
         }

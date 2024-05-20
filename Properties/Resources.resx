@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aa_pointing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\aa_pointing.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="arrow-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-50.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -130,10 +133,22 @@
   <data name="ellipsis-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ellipsis-50.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="forefinger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\forefinger.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gesture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\gesture.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="long-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\long-arrow.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="plus-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-50.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pointing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fingers\pointing.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="thumb-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\thumb-up.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zz_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fingers\zz_ok.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

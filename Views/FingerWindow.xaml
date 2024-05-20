@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StickyFinger"
         xmlns:converter="clr-namespace:StickyFinger.Converter"
         mc:Ignorable="d"
-        Title="FingerWindow" Height="200" Width="300"
+        Title="FingerWindow" Height="240" Width="500"
         ResizeMode="NoResize"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -19,14 +19,13 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>        
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>
     </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="200" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="300" />            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -34,14 +33,14 @@
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="1" Grid.Column="0" Width="200" Height="200" Fill="{Binding CurrentFinger}">
+        <Rectangle Grid.Row="1" Grid.Column="0" Width="200" Height="200" Fill="{Binding CurrentFinger}" Stretch="UniformToFill" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Rectangle.RenderTransform>
                 <RotateTransform x:Name="rotateTransform" CenterX="100" CenterY="100"/>
-            </Rectangle.RenderTransform>            
+            </Rectangle.RenderTransform>
         </Rectangle>
-       
+
         <!-- Control Panel -->
-        
+
         <ui:ControlPanel Grid.Row="0" Grid.Column="1" 
                          OnClose="ControlPanel_OnClose" 
                          OnSlideLeft="ControlPanel_OnSlideLeft"
