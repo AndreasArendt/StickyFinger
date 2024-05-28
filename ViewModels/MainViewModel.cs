@@ -79,8 +79,8 @@ namespace StickyFinger.ViewModels
             {
                 From = this.Rotation,
                 To = this.Rotation + deg,
-                Duration = new Duration(TimeSpan.FromSeconds(5)),
-                RepeatBehavior = RepeatBehavior.Forever
+                Duration = new Duration(TimeSpan.FromSeconds(0.0)),                
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
             };
 
             return animation;
